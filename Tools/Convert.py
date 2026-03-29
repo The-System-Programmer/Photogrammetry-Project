@@ -3,8 +3,8 @@ import cv2
 import os
 import numpy as np
 
-results = []
 def convert():
+    results = []
     # List containing name of all the .npz files
     data_dir = "Data/Features"
     files = sorted(os.listdir(data_dir))

@@ -3,7 +3,7 @@
 Step1:
 	python -m Pipeline.Step1_Feature_extraction
 Step2:
-	python -m Pipeline.Step2_Something
+	python -m Pipeline.Step2_Feature_matching
 
 run: step1 step2
 
