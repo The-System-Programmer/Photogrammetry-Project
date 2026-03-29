@@ -3,7 +3,7 @@ import cv2
 import os
 import numpy as np
 
-def convert():
+def Convert_Numpy_to_OpenCV():
     results = []
     # List containing name of all the .npz files
     data_dir = "Data/Features"
