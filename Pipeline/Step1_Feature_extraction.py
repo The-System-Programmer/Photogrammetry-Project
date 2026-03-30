@@ -2,7 +2,7 @@
 import os
 import cv2
 import numpy as np
-from Tools.Convert_OpenCV_to_Numpy import Convert_OpenCV_to_Numpy
+from Tools.Convert_OpenCV_to_Numpy import keypoints_and_des
 # List containg name of all the images
 data_dir = "Data/Pictures"
 files = sorted(os.listdir(data_dir))
@@ -21,4 +21,7 @@ for f in files:
 
     # Computes the keypoints and descriptions of the image
     kp, des = orb.detectAndCompute(img, None)
-    Convert_OpenCV_to_Numpy(kp,des,f)
+    kp_array = keypoints_and_des(kp,des,f)
+
+    # Saves the converted keypoints and descriptors in a .npz for each image
+    np.savez(f"Data/Features/{f}.npz",keypoints = kp_array,descriptors = des)
